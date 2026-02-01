@@ -1,0 +1,450 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot, 
+    top=2 cm, 
+    bottom=2 cm, 
+    left=2 cm, 
+    right=2 cm, 
+    footskip=1.0 cm, 
+    ]{geometry} 
+\usepackage{titlesec} 
+\usepackage{tabularx} 
+\usepackage{array} 
+\usepackage[dvipsnames]{xcolor} 
+\definecolor{primaryColor}{RGB}{0, 79, 144} 
+\usepackage{enumitem} 
+\usepackage{fontawesome5} 
+\usepackage{amsmath, amsfonts, amssymb, amsthm} 
+\usepackage[
+    pdftitle={Luciano Melodia Curriculum Vitae},
+    pdfauthor={Luciano Melodia},
+    pdfcreator={Luciano Melodia},
+    colorlinks=false,
+    hidelinks
+]{hyperref} 
+\usepackage[pscoord]{eso-pic} 
+\usepackage{calc} 
+\usepackage{bookmark} 
+\usepackage{lastpage} 
+\usepackage{changepage} 
+\usepackage{paracol} 
+\usepackage{ifthen} 
+\usepackage{needspace} 
+\usepackage{iftex} 
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} 
+\pagestyle{empty} 
+\setcounter{secnumdepth}{0} 
+\setlength{\parindent}{0pt} 
+\setlength{\topskip}{0pt} 
+\setlength{\columnsep}{0cm} 
+\makeatletter
+\let\ps@customFooterStyle\ps@plain 
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Luciano Melodia -- Curriculum Vitae \thepage{} of \pageref*{LastPage}}
+}{}{} 
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm} 
+
+\renewcommand\labelitemi{$\circ$} 
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0 cm,
+        parsep=0 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} 
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0 cm,
+        parsep=0 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} 
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} 
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} 
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} 
+
+\newcommand{\placelastupdatedtext}{
+  \AddToShipoutPictureFG*{
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{\today}
+    }}}
+  }
+}
+
+\let\hrefWithoutArrow\href
+
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+\newcommand{\AND}{\unskip
+	\cleaders\copy\ANDbox\hskip\wd\ANDbox
+	\ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
+
+\placelastupdatedtext
+\begin{header}
+	\textbf{\fontsize{24 pt}{24 pt}\selectfont Luciano Melodia}
+
+	\vspace{0.3 cm}
+
+	\normalsize
+	\mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Heckenweg 23, 91056 Erlangen}
+	\kern 0.25 cm
+	\AND
+	\kern 0.25 cm
+	\mbox{\hrefWithoutArrow{mailto:melodia.luciano@proton.me}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}melodia.luciano@proton.me}}
+	\kern 0.25 cm
+	\AND
+	\kern 0.25 cm
+	\mbox{\hrefWithoutArrow{tel:+49 175 3372526}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+49 175 3372526}}
+\end{header}
+
+\vspace{0.3 cm - 0.3 cm}
+
+\section{Education}
+\begin{twocolentry}{
+		\textit{Oct. 2024 – Mar. 2026}} \textbf{Friedrich-Alexander University Erlangen–Nuremberg} \\
+		\textit{M.Sc. Mathematics, Digital Humanities}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item \textbf{Thesis:} Universal Coefficients and the Mayer--Vietoris Sequence for Moore Homology
+	\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{twocolentry}{
+		\textit{Oct. 2021 – Sept. 2024}}
+	\textbf{Friedrich-Alexander University Erlangen–Nuremberg} \\
+	\textit{B.Sc. Mathematics, Computer Science}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item \textbf{Thesis:} Algebraic and Topological Persistence
+	\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{twocolentry}{
+		\textit{Apr. 2015 – Mar. 2018}}
+	\textbf{University of Regensburg} \\
+	\textit{M.A. Information Science}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item \textbf{Thesis:} Deep Learning for Estimating Absorbed Radiation Dose in Nuclear Medicine Diagnostics
+	\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{twocolentry}{
+		\textit{Oct. 2012 – Mar. 2015}}
+	\textbf{University of Regensburg} \\
+	\textit{B.A. German, Italian, Information Science, Media Informatics}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item \textbf{Thesis:} Development of a Punctuation Platform with Linguistic Modules for Information Retrieval
+	\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{twocolentry}{
+		\textit{Oct. 2012 – Apr. 2013}}
+	\textbf{University of Regensburg} \\
+	\textit{Concurrent IT Training Program}
+\end{twocolentry}
+
+\section{Professional Experience}
+\begin{twocolentry}{
+		\textit{Erlangen}
+
+		\textit{Apr. 2023 – Sept. 2026}}
+	\textbf{FAU Department of Mathematics}
+
+	\textit{Research Assistant}
+\end{twocolentry}
+
+\vspace{0.1 cm}
+\begin{onecolentry}
+  \begin{highlights}
+    \item Teaching assistant for Topology (2023, 2026), Functional Analysis (2026), Real Analysis~III (2024, 2026), Real Analysis~II (2025), Linear Algebra~I (2024), Mathematics for Engineers~A2: Calculus (2025), Mathematics for Engineers~A4: Stochastics (2025), and Topology and Applications (2024).
+    \item Substitute lecturer for courses taught by Prof.\ Dr.\ Li and Prof.\ Dr.\ Meusburger on the Tietze extension theorem, connectedness and path-connectedness, and continuity.
+    \item Lecturer for course units on mathematical proof writing.
+    \item Exam proctoring, grading, and mentoring.
+  \end{highlights}
+\end{onecolentry}
+\vspace{0.1 cm}
+
+\begin{twocolentry}{
+		\textit{Erlangen}
+
+		\textit{Aug. 2021 – Aug. 2022}}
+	\textbf{Corscience GmbH \& Co. KG}
+
+	\textit{Working Student}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+	  \item Deep convolutional networks on multi-GPU systems for automatic detection of calibration spikes in ECG data achieving >99\,\% accuracy (10-fold cross-validation, approx.\ 1M real-world samples, state of the art).
+	  \item Residual networks for detection of ECG traces in documents with an IoU of approx.\ 98\,\% (10-fold cross-validation, approx.\ 10M augmented samples), state-of-the-art image segmentation.
+	  \item Image segmentation of ECG traces using matrix factorization methods with an IoU of approx.\ 99\,\%, statistically highly significant, state of the art.
+	\end{highlights}
+\end{onecolentry}
+\vspace{0.1 cm}
+
+\begin{twocolentry}{
+		\textit{Erlangen}
+
+		\textit{Sept. 2018 – Dec. 2021}}
+	\textbf{Siemens Energy AG}
+
+	\textit{Research Associate}
+\end{twocolentry}
+
+\vspace{0.1 cm}
+\begin{onecolentry}
+	\begin{highlights}
+	  \item Development of a novel topology-based interpolation method for industrial sensor data and handwriting data; published at IWCIA, with an open-source implementation.
+	  \item Design of a method to estimate the capacity of neural networks for signal data; reduction of training costs by approx.\ €25{,}000 per year; presented at ICPR, source code available as open source.
+	  \item Development of a hierarchical KKS classifier for power-plant sensors using topological data analysis (Betti curves) with accuracies of up to 93\,\%; published at PKDD, with an open-source implementation.
+	  \item Extensive teaching and examination experience in data science and computer science (lectures, seminars, tutorials, e-exams) with excellent course evaluations.
+	  \item Supervision of multiple B.Sc.\ and M.Sc.\ theses on sensor-signal classification, ECG analysis, gas-sensor time series, and industrial dashboards.
+	  \item Technologies: Python (3.8/3.9), TensorFlow~2.x, CUDA~11, cuDNN~8, Linux (Ubuntu, Arch), and Windows.
+	  \item Teaching assistant for Conceptual Modeling (2019), New Technologies in Data Management (2019, 2020, 2021), Process-Oriented Information Systems (2019, 2020, 2021), Topological Data Analysis (2020), Homological Data Analysis (2021).
+	  \item Lecturer for Knowledge Discovery in Databases (2021).
+	\end{highlights}
+\end{onecolentry}
+\vspace{0.1 cm}
+
+\begin{twocolentry}{
+	\textit{Regensburg}
+
+	\textit{June 2015 – Mar. 2018}}
+	\textbf{mb Support GmbH}
+
+	\textit{Scientific Stuff}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item Industrial document digitization pipeline using high-performance OCR.
+		\item Integration of the Asterisk telephony API into Openviva C2.
+		\item Market and statistical analysis using deep learning.
+	\end{highlights}
+\end{onecolentry}
+\vspace{0.1 cm}
+
+\begin{twocolentry}{
+		\textit{University of Regensburg}
+
+		\textit{Oct. 2013 – Sept. 2015}}
+	\textbf{Chair of German Linguistics}
+
+	\textit{Research Assistant}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+	  \item Subject-matter editing and proofreading of academic texts and examinations.
+	  \item Organization and coordination of academic conferences.
+	  \item Technical maintenance and updates of the university website.
+	  \item Design and implementation of an academic social network.
+	\end{highlights}
+\end{onecolentry}
+\vspace{0.1 cm}
+
+\begin{twocolentry}{
+	\textit{Regensburg}
+
+	\textit{Sept. 2012 – Dec. 2015}}
+	\textbf{Apostelkeller}
+
+	\textit{Chef}
+\end{twocolentry}
+
+\vspace{0.1 cm}
+\begin{onecolentry}
+	\begin{highlights}
+	  \item Planning and preparing menus for up to 140 guests.
+	  \item Front-of-house support and waiting tables with direct guest interaction.
+	  \item Inventory management and stock control in the kitchen.
+	\end{highlights}
+\end{onecolentry}
+
+
+\vspace{0.1 cm}
+\begin{twocolentry}{
+		\textit{Regensburg}
+
+		\textit{Oct. 2012 – Aug. 2014}}
+	\textbf{Anatol GmbH \& Co. KG}
+
+	\textit{Translator}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+	\begin{highlights}
+		\item Translation between Italian, German, Polish, and English.
+	\end{highlights}
+\end{onecolentry}
+
+\section{Skills}
+\begin{onecolentry}
+  \textbf{Programming:} Python (expert), Rust (advanced), C++ (basic)
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Web Technologies:} HTML5, CSS3 (expert), JavaScript, PHP (advanced)
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Typesetting:} \LaTeX{} (expert)
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Operating Systems:} Linux (Arch, Ubuntu) and macOS (expert), Windows (advanced)
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Languages:} German (native), English (C2), Italian (C2), Polish (B2), Spanish (A2)
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Sports:} Lifting (240kg Deadlift, 120kg Bench, 150kg Squat), Muay Thai 4:2:1 – W:L:D $\bullet$, Weng Chun {\color{Green}$\bullet$}
+\end{onecolentry}
+\begin{onecolentry}
+  \textbf{Hobbies:} Competitive cooking, fiction (Amor Towles \& Benedict Jacka)
+\end{onecolentry}
+
+\section{Publications}
+\begin{samepage}
+	\begin{twocolentry}{2021}
+		\textbf{Homological Time Series Analysis of Sensor Signals from Power Plants.}
+
+		\mbox{\textbf{\textit{Luciano Melodia}}}, \mbox{Richard Lenz}
+	\end{twocolentry}
+	\begin{onecolentry}
+		\href{https://doi.org/10.1007/978-3-030-93736-2\_22}{10.1007/978-3-030-93736-2\_22}
+	\end{onecolentry}
+	\begin{twocolentry}{2021}
+		\textbf{Estimate of the Neural Network Dimension Using Algebraic Topology and Lie Theory.}
+
+		\mbox{\textbf{\textit{Luciano Melodia}}}, \mbox{Richard Lenz}
+	\end{twocolentry}
+	\begin{onecolentry}
+		\href{https://doi.org/10.1007/978-3-030-68821-9\_2}{10.1007/978-3-030-68821-9\_2}
+	\end{onecolentry}
+	\begin{twocolentry}{2020}
+		\textbf{Persistent Homology as a Stopping Criterion for Voronoi Interpolation.}
+
+		\mbox{\textbf{\textit{Luciano Melodia}}}, \mbox{Richard Lenz}
+	\end{twocolentry}
+	\begin{onecolentry}
+		\href{https://doi.org/10.1007/978-3-030-51002-2\_3}{10.1007/978-3-030-51002-2\_3}
+	\end{onecolentry}
+	\begin{twocolentry}{2015}
+		\textbf{On the Use of the Verb \textit{brauchen} with and without \textit{zu} with the Infinitive.}
+
+		\mbox{\textbf{\textit{Luciano Melodia}}}
+	\end{twocolentry}
+	\begin{onecolentry}
+		\href{https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=3808&lng=eng&id=}{ISBN 978-3-8325-3808-8}
+	\end{onecolentry}
+\end{samepage}
+
+\section{Conferences}
+\begin{onecolentry}
+    \textbf{Reviewer:} \href{https://logconference.org/program-committee/}{Learning on Graphs (LOG, 2022–24)}, \href{https://www.iaria.org/conferences/DBKDA.html}{DBKDA (2020–24)}, \href{https://gt-rl.github.io/}{GT-RL @ ICLR (2022)}, \href{https://tda-in-ml.github.io/committee}{TDA in ML @ NeurIPS (2020)}.
+\end{onecolentry}
+\begin{onecolentry}
+	\textbf{Author:} \href{https://link.springer.com/conference/icpr}{ICPR (2021)}, \href{https://iwcia2020.wordpress.com/}{IWCIA (2020)}, \href{https://ecmlpkdd2019.org/}{ECML PKDD (2019–2020)}, \href{https://www.uni-regensburg.de/sprache-literatur-kultur/germanistik/internationales/forschung-und-lehre/index.html}{Destandardization and Standard Variety (2013)}.
+\end{onecolentry}
+\begin{onecolentry}
+	\textbf{Invited Talk:} \href{https://cnc.ac.in/assets/uploads/Faculty/profile/Mr.\%20Rajeshkumar\%20Resume\_.pdf}{International Conference on Practical Mathematical Discourse (2020)}.
+\end{onecolentry}
+\begin{onecolentry}
+	\textbf{Attendance:} \href{https://www.math.fau.de/lie-gruppen/}{Colloquium on Lie Groups}, \href{https://sigmod2020.org/}{SIGMOD/PODS (2020)}, \href{https://www.uni-regensburg.de/sprache-literatur-kultur/germanistik/internationales/forschung-und-lehre/index.html}{Language Management and Orthography (2015)}.
+\end{onecolentry}
+
+\section{Awards, Scholarships, and Service}
+\begin{twocolentry}{\textit{2024}}
+  \href{https://logconference.org/program-committee/}{Best Reviewer Award, Learning on Graphs (LOG)}
+\end{twocolentry}
+\begin{twocolentry}{\textit{2024}}
+  \href{https://www.stmwk.bayern.de/studenten/foerderung-und-stipendien/forster-stipendium.html}{Recipient of the Oskar Karl Forster Scholarship}
+\end{twocolentry}
+\begin{twocolentry}{\textit{2024}}
+  Student Representative for the Department of Mathematics, Friedrich-Alexander University Erlangen–Nuremberg
+\end{twocolentry}
+\begin{twocolentry}{\textit{2019–2020}}
+  \href{https://gi.de/}{Member of the German Informatics Society}
+\end{twocolentry}
+\begin{twocolentry}{\textit{2017–2018}}
+  \href{https://www.uni-regensburg.de/informatik-data-science/maschinelles-lernen-insb-uncertainty-quantification/startseite/index.html}{Member of the Computational Intelligence and Machine Learning Research Group (CIML)}
+\end{twocolentry}
+\begin{twocolentry}{\textit{2016}}
+  Student Representative for the Faculty of Language, Literature, and Cultural Studies, University of Regensburg
+\end{twocolentry}
+\end{document}
